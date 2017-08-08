@@ -243,8 +243,7 @@ int main(int argc, char* argv[])
 
       boost::system::error_code ec;
       if (boost::filesystem::exists(config_path, ec)) {
-        std::cout << "Success: Configuration file openned: " << config_path << std::endl;
-        po::store(po::parse_config_file<char>(config_path.string<std::string>().c_str(), desc_cmd_sett, true), vm);
+        po::store(po::parse_config_file<char>(config_path.string<std::string>().c_str(), desc_cmd_sett), vm);
       }
 
       po::notify(vm);

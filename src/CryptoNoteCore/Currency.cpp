@@ -627,67 +627,67 @@ size_t Currency::getApproximateMaximumInputCount(size_t transactionSize, size_t 
 }
 
 Currency::Currency(Currency&& currency) :
-m_cryptonoteName(currency.m_cryptonoteName),
-m_maxBlockHeight(currency.m_maxBlockHeight),
-m_maxBlockBlobSize(currency.m_maxBlockBlobSize),
-m_maxTxSize(currency.m_maxTxSize),
-m_publicAddressBase58Prefix(currency.m_publicAddressBase58Prefix),
-m_minedMoneyUnlockWindow(currency.m_minedMoneyUnlockWindow),
-m_timestampCheckWindow(currency.m_timestampCheckWindow),
-m_blockFutureTimeLimit(currency.m_blockFutureTimeLimit),
-m_moneySupply(currency.m_moneySupply),
-m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
-m_rewardBlocksWindow(currency.m_rewardBlocksWindow),
-m_blockGrantedFullRewardZone(currency.m_blockGrantedFullRewardZone),
-m_expectedNumberOfBlocksPerDay(currency.m_expectedNumberOfBlocksPerDay),
-m_blockGrantedFullRewardZoneV1(currency.m_blockGrantedFullRewardZoneV1),
-m_blockGrantedFullRewardZoneV2(currency.m_blockGrantedFullRewardZoneV2),
-m_keyImageCheckingBlockIndex(currency.m_keyImageCheckingBlockIndex),
-m_minerTxBlobReservedSize(currency.m_minerTxBlobReservedSize),
-m_maxTransactionSizeLimit(currency.m_maxTransactionSizeLimit),
-m_numberOfDecimalPlaces(currency.m_numberOfDecimalPlaces),
-m_coin(currency.m_coin),
-m_mininumFee(currency.m_mininumFee),
-m_defaultDustThreshold(currency.m_defaultDustThreshold),
-m_difficultyTarget(currency.m_difficultyTarget),
-m_difficultyWindowV1(currency.m_difficultyWindowV1),
-m_difficultyWindowV2(currency.m_difficultyWindowV2),
-m_difficultyLagV1(currency.m_difficultyLagV1),
-m_difficultyLagV2(currency.m_difficultyLagV2),
-m_difficultyCutV1(currency.m_difficultyCutV1),
-m_difficultyCutV2(currency.m_difficultyCutV2),
-m_difficultyWindow(currency.m_difficultyWindow),
-m_difficultyLag(currency.m_difficultyLag),
-m_difficultyCut(currency.m_difficultyCut),
-m_maxBlockSizeInitial(currency.m_maxBlockSizeInitial),
-m_maxBlockSizeGrowthSpeedNumerator(currency.m_maxBlockSizeGrowthSpeedNumerator),
-m_maxBlockSizeGrowthSpeedDenominator(currency.m_maxBlockSizeGrowthSpeedDenominator),
-m_lockedTxAllowedDeltaSeconds(currency.m_lockedTxAllowedDeltaSeconds),
-m_lockedTxAllowedDeltaBlocks(currency.m_lockedTxAllowedDeltaBlocks),
-m_mempoolTxLiveTime(currency.m_mempoolTxLiveTime),
-m_numberOfPeriodsToForgetTxDeletedFromPool(currency.m_numberOfPeriodsToForgetTxDeletedFromPool),
-m_fusionTxMaxSize(currency.m_fusionTxMaxSize),
-m_fusionTxMinInputCount(currency.m_fusionTxMinInputCount),
-m_fusionTxMinInOutCountRatio(currency.m_fusionTxMinInOutCountRatio),
-m_upgradeHeightV2(currency.m_upgradeHeightV2),
-m_upgradeHeightV3(currency.m_upgradeHeightV3),
-m_upgradeVotingThreshold(currency.m_upgradeVotingThreshold),
-m_upgradeVotingWindow(currency.m_upgradeVotingWindow),
-m_upgradeWindow(currency.m_upgradeWindow),
-m_blocksFileName(currency.m_blocksFileName),
-m_blockIndexesFileName(currency.m_blockIndexesFileName),
-m_txPoolFileName(currency.m_txPoolFileName),
-m_mandatoryTransaction(currency.m_mandatoryTransaction),
-m_killHeight(currency.m_killHeight),
-m_tailEmissionReward(currency.m_tailEmissionReward),
-m_cryptonoteCoinVersion(currency.m_cryptonoteCoinVersion),
-m_genesisBlockReward(currency.m_genesisBlockReward),
-m_zawyDifficultyV2(currency.m_zawyDifficultyV2),
-m_genesisCoinbaseTxHex(currency.m_genesisCoinbaseTxHex),
-m_testnet(currency.m_testnet),
-genesisBlockTemplate(std::move(currency.genesisBlockTemplate)),
-cachedGenesisBlock(new CachedBlock(genesisBlockTemplate)),
-logger(currency.logger) {
+  m_cryptonoteName(currency.m_cryptonoteName),
+  m_maxBlockHeight(currency.m_maxBlockHeight),
+  m_maxBlockBlobSize(currency.m_maxBlockBlobSize),
+  m_maxTxSize(currency.m_maxTxSize),
+  m_publicAddressBase58Prefix(currency.m_publicAddressBase58Prefix),
+  m_minedMoneyUnlockWindow(currency.m_minedMoneyUnlockWindow),
+  m_timestampCheckWindow(currency.m_timestampCheckWindow),
+  m_blockFutureTimeLimit(currency.m_blockFutureTimeLimit),
+  m_moneySupply(currency.m_moneySupply),
+  m_emissionSpeedFactor(currency.m_emissionSpeedFactor),
+  m_rewardBlocksWindow(currency.m_rewardBlocksWindow),
+  m_blockGrantedFullRewardZone(currency.m_blockGrantedFullRewardZone),
+  m_expectedNumberOfBlocksPerDay(currency.m_expectedNumberOfBlocksPerDay),
+  m_blockGrantedFullRewardZoneV1(currency.m_blockGrantedFullRewardZoneV1),
+  m_blockGrantedFullRewardZoneV2(currency.m_blockGrantedFullRewardZoneV2),
+  m_keyImageCheckingBlockIndex(currency.m_keyImageCheckingBlockIndex),
+  m_minerTxBlobReservedSize(currency.m_minerTxBlobReservedSize),
+  m_maxTransactionSizeLimit(currency.m_maxTransactionSizeLimit),
+  m_numberOfDecimalPlaces(currency.m_numberOfDecimalPlaces),
+  m_coin(currency.m_coin),
+  m_mininumFee(currency.m_mininumFee),
+  m_defaultDustThreshold(currency.m_defaultDustThreshold),
+  m_difficultyTarget(currency.m_difficultyTarget),
+  m_difficultyWindowV1(currency.m_difficultyWindowV1),
+  m_difficultyWindowV2(currency.m_difficultyWindowV2),
+  m_difficultyLagV1(currency.m_difficultyLagV1),
+  m_difficultyLagV2(currency.m_difficultyLagV2),
+  m_difficultyCutV1(currency.m_difficultyCutV1),
+  m_difficultyCutV2(currency.m_difficultyCutV2),
+  m_difficultyWindow(currency.m_difficultyWindow),
+  m_difficultyLag(currency.m_difficultyLag),
+  m_difficultyCut(currency.m_difficultyCut),
+  m_maxBlockSizeInitial(currency.m_maxBlockSizeInitial),
+  m_maxBlockSizeGrowthSpeedNumerator(currency.m_maxBlockSizeGrowthSpeedNumerator),
+  m_maxBlockSizeGrowthSpeedDenominator(currency.m_maxBlockSizeGrowthSpeedDenominator),
+  m_lockedTxAllowedDeltaSeconds(currency.m_lockedTxAllowedDeltaSeconds),
+  m_lockedTxAllowedDeltaBlocks(currency.m_lockedTxAllowedDeltaBlocks),
+  m_mempoolTxLiveTime(currency.m_mempoolTxLiveTime),
+  m_numberOfPeriodsToForgetTxDeletedFromPool(currency.m_numberOfPeriodsToForgetTxDeletedFromPool),
+  m_fusionTxMaxSize(currency.m_fusionTxMaxSize),
+  m_fusionTxMinInputCount(currency.m_fusionTxMinInputCount),
+  m_fusionTxMinInOutCountRatio(currency.m_fusionTxMinInOutCountRatio),
+  m_upgradeHeightV2(currency.m_upgradeHeightV2),
+  m_upgradeHeightV3(currency.m_upgradeHeightV3),
+  m_upgradeVotingThreshold(currency.m_upgradeVotingThreshold),
+  m_upgradeVotingWindow(currency.m_upgradeVotingWindow),
+  m_upgradeWindow(currency.m_upgradeWindow),
+  m_blocksFileName(currency.m_blocksFileName),
+  m_blockIndexesFileName(currency.m_blockIndexesFileName),
+  m_txPoolFileName(currency.m_txPoolFileName),
+  m_mandatoryTransaction(currency.m_mandatoryTransaction),
+  m_killHeight(currency.m_killHeight),
+  m_tailEmissionReward(currency.m_tailEmissionReward),
+  m_cryptonoteCoinVersion(currency.m_cryptonoteCoinVersion),
+  m_genesisBlockReward(currency.m_genesisBlockReward),
+  m_zawyDifficultyV2(currency.m_zawyDifficultyV2),
+  m_genesisCoinbaseTxHex(currency.m_genesisCoinbaseTxHex),
+  m_testnet(currency.m_testnet),
+  genesisBlockTemplate(std::move(currency.genesisBlockTemplate)),
+  cachedGenesisBlock(new CachedBlock(genesisBlockTemplate)),
+  logger(currency.logger) {
 }
 
 CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
@@ -703,17 +703,17 @@ CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
 
   moneySupply(parameters::MONEY_SUPPLY);
   emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
-genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
-cryptonoteCoinVersion(parameters::CRYPTONOTE_COIN_VERSION);
+  genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
+  cryptonoteCoinVersion(parameters::CRYPTONOTE_COIN_VERSION);
 
   rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
-mandatoryTransaction(parameters::MANDATORY_TRANSACTION);
-killHeight(parameters::KILL_HEIGHT);
-tailEmissionReward(parameters::TAIL_EMISSION_REWARD);
-zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
+  mandatoryTransaction(parameters::MANDATORY_TRANSACTION);
+  killHeight(parameters::KILL_HEIGHT);
+  tailEmissionReward(parameters::TAIL_EMISSION_REWARD);
+  zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
   blockGrantedFullRewardZone(parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
   minerTxBlobReservedSize(parameters::CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE);
-maxTransactionSizeLimit(parameters::MAX_TRANSACTION_SIZE_LIMIT);
+  maxTransactionSizeLimit(parameters::MAX_TRANSACTION_SIZE_LIMIT);
 
   numberOfDecimalPlaces(parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT);
 
@@ -736,8 +736,8 @@ maxTransactionSizeLimit(parameters::MAX_TRANSACTION_SIZE_LIMIT);
   mempoolTxFromAltBlockLiveTime(parameters::CRYPTONOTE_MEMPOOL_TX_FROM_ALT_BLOCK_LIVETIME);
   numberOfPeriodsToForgetTxDeletedFromPool(parameters::CRYPTONOTE_NUMBER_OF_PERIODS_TO_FORGET_TX_DELETED_FROM_POOL);
 
-// fusion transactions fix
-fusionTxMaxSize(parameters::MAX_TRANSACTION_SIZE_LIMIT * 30 / 100);
+  // fusion transactions fix
+  fusionTxMaxSize(parameters::MAX_TRANSACTION_SIZE_LIMIT * 30 / 100);
   fusionTxMinInputCount(parameters::FUSION_TX_MIN_INPUT_COUNT);
   fusionTxMinInOutCountRatio(parameters::FUSION_TX_MIN_IN_OUT_COUNT_RATIO);
 

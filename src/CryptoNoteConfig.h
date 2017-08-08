@@ -27,20 +27,22 @@ namespace parameters {
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 6;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 0xad;
 const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 10;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = static_cast<uint64_t>(-1);
-const uint32_t MANDATORY_TRANSACTION                          = 0;
-const uint32_t KILL_HEIGHT                          = 0;
-const uint64_t TAIL_EMISSION_REWARD                          = 0;
-const size_t CRYPTONOTE_COIN_VERSION                          = 0;
+const uint64_t MONEY_SUPPLY                            = 3100000000000000;
+const uint32_t MANDATORY_TRANSACTION                   = 0;
+const uint32_t KILL_HEIGHT                             = 0;
+const uint64_t TAIL_EMISSION_REWARD                    = 0;
+const size_t CRYPTONOTE_COIN_VERSION                   = 0;
 const bool ZAWY_DIFFICULTY_V2                          = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 18;
+const bool ZAWY_DIFFICULTY_V3                          = 0;
+const bool ZAWY_DIFFICULTY_V4                          = 0;
+const unsigned EMISSION_SPEED_FACTOR                         = 10;
 const uint64_t GENESIS_BLOCK_REWARD                          = 0;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
@@ -99,10 +101,10 @@ const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "blockindexes.bin
 const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "poolstate.bin";
 const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001ffffffffffff0f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121013c086a48c15fb637a96991bc6d53caf77068b5ba6eeb3c82357228c49790584a";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "forknote";
+const char     CRYPTONOTE_NAME[]                             = "chavezcoin";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -117,8 +119,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  8080;
-const int      RPC_DEFAULT_PORT                              =  8081;
+const int      P2P_DEFAULT_PORT                              =  47047;
+const int      RPC_DEFAULT_PORT                              =  47048;
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -135,8 +137,10 @@ const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; //
 const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
 const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
-const char* const SEED_NODES[] = { "seed.bytecoin.org:8080", "85.25.201.95:8080", "85.25.196.145:8080", "85.25.196.146:8080", "85.25.196.144:8080", "5.199.168.138:8080", "62.75.236.152:8080", "85.25.194.245:8080", "95.211.224.160:8080", "144.76.200.44:8080" };
-
+const char* const SEED_NODES[] = {
+  "192.189.25.199:47047"
+, "162.213.215.55:47047"
+};
 
 struct CheckpointData {
   uint32_t index;
@@ -144,7 +148,7 @@ struct CheckpointData {
 };
 
 const std::initializer_list<CheckpointData> CHECKPOINTS = {
-  // {79000,  "cae33204e624faeb64938d80073bb7bbacc27017dc63f36c5c0f313cad455a02"},
+  // {1283000, "826043db95e9801f038f254d223ce0d0912da269dcce1461b5f0f05ddfae9e1c"}
 };
 } // CryptoNote
 

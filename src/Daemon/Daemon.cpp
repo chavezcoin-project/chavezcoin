@@ -248,8 +248,8 @@ int main(int argc, char* argv[])
       }
 
       po::notify(vm);
-      if (command_line::get_arg(vm, command_line::arg_data_dir) == Tools::getDefaultDataDirectory() && command_line::has_arg(vm, arg_CRYPTONOTE_NAME) && !command_line::get_arg(vm, arg_CRYPTONOTE_NAME).empty()) {
-        boost::replace_all(data_dir, CryptoNote::CRYPTONOTE_NAME, command_line::get_arg(vm, arg_CRYPTONOTE_NAME));
+      if (command_line::get_arg(vm, command_line::arg_data_dir) == Tools::getDefaultDataDirectory()) {
+        boost::replace_all(data_dir, CryptoNote::CRYPTONOTE_NAME, CryptoNote::CRYPTONOTE_NAME);
       }
       data_dir_path = data_dir;
       if (command_line::get_arg(vm, arg_print_genesis_tx)) {

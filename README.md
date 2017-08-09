@@ -4,7 +4,7 @@ Copyright (c) 2017-Present, The Chavezcoin Project
 
 ## Development Resources
 
-- Web: [chavezcoin.tk](https://chavezcoin.tk)
+- Web: [chavezcoin.tk](http://chavezcoin.tk)
 - GitHub: [https://github.com/chavezcoin-project/chavezcoin](https://github.com/chavezcoin-project/chavezcoin)
 
 ## Build

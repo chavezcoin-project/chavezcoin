@@ -368,11 +368,6 @@ int main(int argc, char* argv[])
     currencyBuilder.difficultyLagV2(CryptoNote::parameters::DIFFICULTY_LAG_V2);
     currencyBuilder.difficultyCutV1(CryptoNote::parameters::DIFFICULTY_CUT_V1);
     currencyBuilder.difficultyCutV2(CryptoNote::parameters::DIFFICULTY_CUT_V2);
-    currencyBuilder.killHeight(CryptoNote::parameters::KILL_HEIGHT);
-    currencyBuilder.tailEmissionReward(CryptoNote::parameters::TAIL_EMISSION_REWARD);
-    currencyBuilder.cryptonoteCoinVersion(CryptoNote::parameters::CRYPTONOTE_COIN_VERSION);
-    currencyBuilder.genesisBlockReward(CryptoNote::parameters::GENESIS_BLOCK_REWARD);
-    currencyBuilder.zawyDifficultyV2(CryptoNote::parameters::ZAWY_DIFFICULTY_V2);
     currencyBuilder.testnet(testnet_mode);
 
     try {

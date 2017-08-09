@@ -76,14 +76,10 @@ public:
   size_t difficultyLagV1() const { return m_difficultyLagV1; }
   size_t difficultyLagV2() const { return m_difficultyLagV2; }
   size_t difficultyCutV1() const { return m_difficultyCutV1; }
-  size_t difficultyCutV2() const { return m_difficultyCutV2; }
-  size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
-  size_t difficultyLag() const { return m_difficultyLag; }
-  size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion) const;
-  size_t difficultyCut() const { return m_difficultyCut; }
-  size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const;
-  size_t difficultyBlocksCount() const { return m_difficultyWindow + m_difficultyLag; }
-  size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyCutV2() const { return m_difficultyCutV2; }size_t difficultyWindowByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyLag() const { return m_difficultyLag; }size_t difficultyLagByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyCut() const { return m_difficultyCut; }size_t difficultyCutByBlockVersion(uint8_t blockMajorVersion) const;
+  size_t difficultyBlocksCount() const { return m_difficultyWindow + m_difficultyLag; }size_t difficultyBlocksCountByBlockVersion(uint8_t blockMajorVersion) const;
 
   size_t maxBlockSizeInitial() const { return m_maxBlockSizeInitial; }
   uint64_t maxBlockSizeGrowthSpeedNumerator() const { return m_maxBlockSizeGrowthSpeedNumerator; }

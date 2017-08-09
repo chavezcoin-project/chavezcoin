@@ -251,11 +251,13 @@ int main(int argc, char* argv[])
       if (command_line::get_arg(vm, command_line::arg_data_dir) == Tools::getDefaultDataDirectory()) {
         boost::replace_all(data_dir, CryptoNote::CRYPTONOTE_NAME, CryptoNote::CRYPTONOTE_NAME);
       }
+
       data_dir_path = data_dir;
       if (command_line::get_arg(vm, arg_print_genesis_tx)) {
         print_genesis_tx_hex(vm, logManager);
         return false;
       }
+
       return true;
     });
 
@@ -292,6 +294,7 @@ int main(int argc, char* argv[])
     }
 
     //create objects and link them
+
     CryptoNote::CurrencyBuilder currencyBuilder(logManager);
 
     currencyBuilder.cryptonoteName(CryptoNote::CRYPTONOTE_NAME);
@@ -365,13 +368,7 @@ int main(int argc, char* argv[])
     currencyBuilder.difficultyLagV2(CryptoNote::parameters::DIFFICULTY_LAG_V2);
     currencyBuilder.difficultyCutV1(CryptoNote::parameters::DIFFICULTY_CUT_V1);
     currencyBuilder.difficultyCutV2(CryptoNote::parameters::DIFFICULTY_CUT_V2);
-
-    currencyBuilder.killHeight(CryptoNote::parameters::KILL_HEIGHT);
-    currencyBuilder.tailEmissionReward(CryptoNote::parameters::TAIL_EMISSION_REWARD);
-    currencyBuilder.cryptonoteCoinVersion(CryptoNote::parameters::CRYPTONOTE_COIN_VERSION);
-    currencyBuilder.genesisBlockReward(CryptoNote::parameters::GENESIS_BLOCK_REWARD);
-    currencyBuilder.zawyDifficultyV2(CryptoNote::parameters::ZAWY_DIFFICULTY_V2);
-    // currencyBuilder.testnet(testnet_mode);
+    currencyBuilder.testnet(testnet_mode);
 
     try {
       currencyBuilder.currency();

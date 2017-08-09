@@ -40,8 +40,6 @@ const uint32_t KILL_HEIGHT                             = 0;
 const uint64_t TAIL_EMISSION_REWARD                    = 0;
 const size_t CRYPTONOTE_COIN_VERSION                   = 0;
 const bool ZAWY_DIFFICULTY_V2                          = 0;
-const bool ZAWY_DIFFICULTY_V3                          = 0;
-const bool ZAWY_DIFFICULTY_V4                          = 0;
 const unsigned EMISSION_SPEED_FACTOR                         = 10;
 const uint64_t GENESIS_BLOCK_REWARD                          = 0;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
@@ -53,11 +51,11 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
 const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 8;
-const uint64_t MINIMUM_FEE                                   = UINT64_C(1000000);    // pow(10, 6)
-const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1000000);    // pow(10, 6)
+const uint64_t MINIMUM_FEE                                   = 1000000;    // pow(10, 6)
+const uint64_t DEFAULT_DUST_THRESHOLD                        = 1000000;    // pow(10, 6)
 // Use 0 for default max transaction size limit
-const uint64_t MAX_TRANSACTION_SIZE_LIMIT                          = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 125 / 100 - CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE;
-const uint64_t DEFAULT_FEE                          = MINIMUM_FEE;
+const uint64_t MAX_TRANSACTION_SIZE_LIMIT                    = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 125 / 100 - CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE;
+const uint64_t DEFAULT_FEE                                   = MINIMUM_FEE;
 
 const uint64_t DIFFICULTY_TARGET                             = 120; // seconds
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
@@ -88,8 +86,8 @@ const size_t   FUSION_TX_MIN_INPUT_COUNT                     = 12;
 const size_t   FUSION_TX_MIN_IN_OUT_COUNT_RATIO              = 4;
 
 const uint32_t KEY_IMAGE_CHECKING_BLOCK_INDEX                = 0;
-const uint32_t UPGRADE_HEIGHT_V2                                = 546602;
-const uint32_t UPGRADE_HEIGHT_V3                                = 985548;
+const uint32_t UPGRADE_HEIGHT_V2                             = 546602;
+const uint32_t UPGRADE_HEIGHT_V3                             = 985548;
 const unsigned UPGRADE_VOTING_THRESHOLD                      = 90;               // percent
 const uint32_t UPGRADE_VOTING_WINDOW                         = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
 const uint32_t UPGRADE_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY;  // blocks
@@ -101,7 +99,7 @@ const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "blockindexes.bin
 const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "poolstate.bin";
 const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001f0e6fedd8d58029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210148d260b4f42537753644d09fbdefdd6b76abf3c13b529289f740e273182ce172";
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "chavezcoin";

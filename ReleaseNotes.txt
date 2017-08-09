@@ -13,11 +13,11 @@ Release notes 2.0.2
 - Security algorithm enhancement
 - Daemon synchronization issue fix
 - Wallet minor bug fixes
-- Bytecoin RPC Wallet log optimization
+- Chavezcoin RPC Wallet log optimization
 
 Release notes 2.0.1
 
-- Bytecoin RPC Wallet API improvements
+- Chavezcoin RPC Wallet API improvements
 
 Release notes 2.0.0
 
@@ -26,23 +26,23 @@ Release notes 2.0.0
 
 Release notes 1.0.11
 
-- New Bytecoin Wallet file format
+- New Chavezcoin Wallet file format
 - Daemon loading optimization
 
 Release notes 1.0.10
 
 - Blocksize increase
-- Fusion transactions for Bytecoin RPC Wallet
-- Bytecoin RPC Wallet API improvements
+- Fusion transactions for Chavezcoin RPC Wallet
+- Chavezcoin RPC Wallet API improvements
 
 Release notes 1.0.9
 
-- New API for Bytecoin RPC Wallet
+- New API for Chavezcoin RPC Wallet
 - Various improvements
 
 Release notes 1.0.8
 
-- Fusion transactions for Bytecoin Wallet
+- Fusion transactions for Chavezcoin Wallet
 - IWallet high-level API update
 - JSON RPC improvements
 - Synchronization improvements for OS X
@@ -55,7 +55,7 @@ Release notes 1.0.7
 Release notes 1.0.6
 
 - High-level API update
-- Aggregate multi-addresses for Bytecoin RPC Wallet
+- Aggregate multi-addresses for Chavezcoin RPC Wallet
 - Wallet synchronization speed increase
 
 Release notes 1.0.5
@@ -68,7 +68,7 @@ Release notes 1.0.5
 
 Release notes 1.0.4
 
-- Bytecoin RPC Wallet
+- Chavezcoin RPC Wallet
 - New multithreading library
 - Improved console logging
 - Further optimizations
@@ -166,4 +166,4 @@ Release notes 0.8.2
 
 Release notes 0.8.1
 
-Bytecoin project is moved to GitHub
+Chavezcoin project is moved to GitHub

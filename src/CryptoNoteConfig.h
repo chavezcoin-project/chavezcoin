@@ -40,9 +40,8 @@ const uint32_t KILL_HEIGHT                             = 0;
 const uint64_t TAIL_EMISSION_REWARD                    = 0;
 const size_t CRYPTONOTE_COIN_VERSION                   = 0;
 const bool ZAWY_DIFFICULTY_V2                          = 0;
-const unsigned EMISSION_SPEED_FACTOR                         = 10;
-const uint64_t GENESIS_BLOCK_REWARD                          = 0;
-static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
+const unsigned EMISSION_SPEED_FACTOR                   = 10;
+const uint64_t GENESIS_BLOCK_REWARD                    = 3100000000000000;
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
@@ -99,7 +98,7 @@ const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "blockindexes.bin
 const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "poolstate.bin";
 const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff0001f0e6fedd8d58029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd088071210148d260b4f42537753644d09fbdefdd6b76abf3c13b529289f740e273182ce172";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000105029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101062f887334eeca81b43ebe980c98c916dc0c71227cb4bb849a6f8c8c109847ee";
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "chavezcoin";

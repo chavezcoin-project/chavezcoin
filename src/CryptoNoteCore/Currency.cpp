@@ -175,21 +175,19 @@ uint32_t Currency::upgradeHeight(uint8_t majorVersion) const {
 bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size_t currentBlockSize, uint64_t alreadyGeneratedCoins,
   uint64_t fee, uint64_t& reward, int64_t& emissionChange) const {
   assert(alreadyGeneratedCoins <= m_moneySupply);
-  assert(m_emissionSpeedFactor > 0 && m_emissionSpeedFactor <= 8 * sizeof(uint64_t));
+  uint64_t baseReward;
 
-  uint64_t baseReward = (m_moneySupply - alreadyGeneratedCoins) >> m_emissionSpeedFactor;
-  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
-    baseReward = m_genesisBlockReward;
-    std::cout << "Genesis block reward: " << baseReward << std::endl;
-  }
-  if (baseReward < m_tailEmissionReward) {
-    baseReward = m_tailEmissionReward;
-  }
-
-  if (alreadyGeneratedCoins + baseReward >= m_moneySupply) {
+  if (alreadyGeneratedCoins >= m_moneySupply) {
     baseReward = 0;
   }
 
+  if (alreadyGeneratedCoins == 0 && m_genesisBlockReward != 0) {
+    // the first block is 5 coins
+    baseReward = 5;
+  } else {
+    // Pre-mine the chavezcoin in a few blocks
+    baseReward = (m_moneySupply - alreadyGeneratedCoins) >> 1;
+  }
 
   size_t blockGrantedFullRewardZone = blockGrantedFullRewardZoneByBlockVersion(blockMajorVersion);
   medianSize = std::max(medianSize, blockGrantedFullRewardZone);
@@ -200,9 +198,9 @@ bool Currency::getBlockReward(uint8_t blockMajorVersion, size_t medianSize, size
 
   uint64_t penalizedBaseReward = getPenalizedAmount(baseReward, medianSize, currentBlockSize);
   uint64_t penalizedFee = blockMajorVersion >= BLOCK_MAJOR_VERSION_2 ? getPenalizedAmount(fee, medianSize, currentBlockSize) : fee;
-if (cryptonoteCoinVersion() == 1) {
-  penalizedFee = getPenalizedAmount(fee, medianSize, currentBlockSize);
-}
+  if (cryptonoteCoinVersion() == 1) {
+    penalizedFee = getPenalizedAmount(fee, medianSize, currentBlockSize);
+  }
 
   emissionChange = penalizedBaseReward - (fee - penalizedFee);
   reward = penalizedBaseReward + penalizedFee;

@@ -26,7 +26,8 @@ namespace error {
 enum class DataBaseErrorCodes : int {
   NOT_INITIALIZED = 1,
   ALREADY_INITIALIZED,
-  INTERNAL_ERROR
+  INTERNAL_ERROR,
+  IO_ERROR
 };
 
 class DataBaseErrorCategory : public std::error_category {

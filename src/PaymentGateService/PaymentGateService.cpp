@@ -83,6 +83,16 @@ bool PaymentGateService::init(int argc, char** argv) {
 
   Logging::LoggerRef log(logger, "main");
 
+  if (config.gateConfiguration.testnet) {
+    log(Logging::INFO) << "Starting in testnet mode";
+    currencyBuilder.testnet(true);
+  }
+
+  if (!config.gateConfiguration.serverRoot.empty()) {
+    changeDirectory(config.gateConfiguration.serverRoot);
+    log(Logging::INFO) << "Current working directory now is " << config.gateConfiguration.serverRoot;
+  }
+
   fileStream.open(config.gateConfiguration.logFile, std::ofstream::app);
 
   if (!fileStream) {
@@ -98,8 +108,7 @@ bool PaymentGateService::init(int argc, char** argv) {
 WalletConfiguration PaymentGateService::getWalletConfig() const {
   return WalletConfiguration{
     config.gateConfiguration.containerFile,
-    config.gateConfiguration.containerPassword,
-    config.gateConfiguration.syncFromZero
+    config.gateConfiguration.containerPassword
   };
 }
 
@@ -146,18 +155,14 @@ void PaymentGateService::stop() {
 void PaymentGateService::runInProcess(Logging::LoggerRef& log) {
   log(Logging::INFO) << "Starting Payment Gate with local node";
 
-      std::string data_dir = config.dataDir;
-      if (config.dataDir == Tools::getDefaultDataDirectory() && !config.coinBaseConfig.CRYPTONOTE_NAME.empty()) {
-        boost::replace_all(data_dir, CryptoNote::CRYPTONOTE_NAME, config.coinBaseConfig.CRYPTONOTE_NAME);
-      }
   CryptoNote::DataBaseConfig dbConfig;
 
   //TODO: make command line options
   dbConfig.setConfigFolderDefaulted(true);
-  dbConfig.setDataDir(data_dir);
-  dbConfig.setMaxOpenFiles(10);
-  dbConfig.setReadCacheSize(100*1024*1024);
-  dbConfig.setWriteBufferSize(100*1024*1024);
+  dbConfig.setDataDir(config.dataDir);
+  dbConfig.setMaxOpenFiles(100);
+  dbConfig.setReadCacheSize(128*1024*1024);
+  dbConfig.setWriteBufferSize(128*1024*1024);
   dbConfig.setTestnet(false);
   dbConfig.setBackgroundThreadsCount(2);
 
@@ -259,8 +264,7 @@ void PaymentGateService::runRpcProxy(Logging::LoggerRef& log) {
 void PaymentGateService::runWalletService(const CryptoNote::Currency& currency, CryptoNote::INode& node) {
   PaymentService::WalletConfiguration walletConfiguration{
     config.gateConfiguration.containerFile,
-    config.gateConfiguration.containerPassword,
-    config.gateConfiguration.syncFromZero
+    config.gateConfiguration.containerPassword
   };
 
   std::unique_ptr<CryptoNote::WalletGreen> wallet(new CryptoNote::WalletGreen(*dispatcher, currency, node, logger));

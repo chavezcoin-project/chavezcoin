@@ -73,38 +73,8 @@ const command_line::arg_descriptor<std::string> arg_daemon_host = { "daemon-host
 const command_line::arg_descriptor<std::string> arg_password = { "password", "Wallet password", "", true };
 const command_line::arg_descriptor<uint16_t> arg_daemon_port = { "daemon-port", "Use daemon instance at port <arg> instead of 8081", 0 };
 const command_line::arg_descriptor<uint32_t> arg_log_level = { "set_log", "", INFO, true };
-  const command_line::arg_descriptor<uint64_t> arg_DEFAULT_FEE  = {"DEFAULT_FEE", "Default fee", CryptoNote::parameters::DEFAULT_FEE};  
-  const command_line::arg_descriptor<bool>      arg_SYNC_FROM_ZERO  = {"SYNC_FROM_ZERO", "Sync from block 0. Use for premine wallet or brainwallet", false};
-  const command_line::arg_descriptor<std::string> arg_config_file = {"config-file", "Specify configuration file", ""};  
-  const command_line::arg_descriptor<std::string> arg_GENESIS_COINBASE_TX_HEX  = {"GENESIS_COINBASE_TX_HEX", "Genesis transaction hex", CryptoNote::parameters::GENESIS_COINBASE_TX_HEX};  
-  const command_line::arg_descriptor<uint64_t>    arg_CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX  = {"CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX", "uint64_t", CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX};
-  const command_line::arg_descriptor<uint64_t>    arg_MONEY_SUPPLY  = {"MONEY_SUPPLY", "uint64_t", CryptoNote::parameters::MONEY_SUPPLY};
-  const command_line::arg_descriptor<unsigned>    arg_EMISSION_SPEED_FACTOR  = {"EMISSION_SPEED_FACTOR", "unsigned", CryptoNote::parameters::EMISSION_SPEED_FACTOR};
-  const command_line::arg_descriptor<size_t>      arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE  = {"CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE", "size_t", CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE};
-  const command_line::arg_descriptor<size_t>      arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = {"CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1", "size_t", CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1};
-  const command_line::arg_descriptor<size_t>      arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = {"CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2", "size_t", CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2};
-  const command_line::arg_descriptor<uint64_t>    arg_CRYPTONOTE_DISPLAY_DECIMAL_POINT  = {"CRYPTONOTE_DISPLAY_DECIMAL_POINT", "uint64_t", CryptoNote::parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT};
-  const command_line::arg_descriptor<uint64_t>    arg_MINIMUM_FEE  = {"MINIMUM_FEE", "uint64_t", CryptoNote::parameters::MINIMUM_FEE};
-  const command_line::arg_descriptor<uint64_t>    arg_DEFAULT_DUST_THRESHOLD  = {"DEFAULT_DUST_THRESHOLD", "uint64_t", CryptoNote::parameters::DEFAULT_DUST_THRESHOLD};
-  const command_line::arg_descriptor<uint64_t>    arg_DIFFICULTY_TARGET  = {"DIFFICULTY_TARGET", "uint64_t", CryptoNote::parameters::DIFFICULTY_TARGET};
-  const command_line::arg_descriptor<uint32_t>    arg_CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW  = {"CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW", "uint32_t", CryptoNote::parameters::CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW};
-  const command_line::arg_descriptor<size_t>      arg_MAX_BLOCK_SIZE_INITIAL  = {"MAX_BLOCK_SIZE_INITIAL", "size_t", CryptoNote::parameters::MAX_BLOCK_SIZE_INITIAL};
-  const command_line::arg_descriptor<uint64_t>    arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY  = {"EXPECTED_NUMBER_OF_BLOCKS_PER_DAY", "uint64_t"};
-  const command_line::arg_descriptor<uint32_t>    arg_UPGRADE_HEIGHT_V2  = {"UPGRADE_HEIGHT_V2", "uint32_t", 0};
-  const command_line::arg_descriptor<uint32_t>    arg_UPGRADE_HEIGHT_V3  = {"UPGRADE_HEIGHT_V3", "uint32_t", 0};
-  const command_line::arg_descriptor<uint32_t>    arg_KEY_IMAGE_CHECKING_BLOCK_INDEX  = {"KEY_IMAGE_CHECKING_BLOCK_INDEX", "uint32_t", 0};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_WINDOW_V1  = {"DIFFICULTY_WINDOW_V1", "size_t", 0};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_WINDOW_V2  = {"DIFFICULTY_WINDOW_V2", "size_t", 0};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_LAG_V1  = {"DIFFICULTY_LAG_V1", "size_t", CryptoNote::parameters::DIFFICULTY_LAG};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_LAG_V2  = {"DIFFICULTY_LAG_V2", "size_t", CryptoNote::parameters::DIFFICULTY_LAG};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_CUT_V1  = {"DIFFICULTY_CUT_V1", "size_t", CryptoNote::parameters::DIFFICULTY_CUT};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_CUT_V2  = {"DIFFICULTY_CUT_V2", "size_t", CryptoNote::parameters::DIFFICULTY_CUT};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_WINDOW  = {"DIFFICULTY_WINDOW", "size_t", 0};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_CUT  = {"DIFFICULTY_CUT", "size_t", CryptoNote::parameters::DIFFICULTY_CUT};
-  const command_line::arg_descriptor<size_t>      arg_DIFFICULTY_LAG  = {"DIFFICULTY_LAG", "size_t", CryptoNote::parameters::DIFFICULTY_LAG};
-  const command_line::arg_descriptor<std::string> arg_rpc_bind_port = {"rpc-bind-port", "", std::to_string(RPC_DEFAULT_PORT)};
-  const command_line::arg_descriptor<uint64_t> arg_MAX_TRANSACTION_SIZE_LIMIT  = {"MAX_TRANSACTION_SIZE_LIMIT", "Max transaction limit size", CryptoNote::parameters::MAX_TRANSACTION_SIZE_LIMIT};  
-  const command_line::arg_descriptor<uint32_t> arg_MANDATORY_TRANSACTION  = {"MANDATORY_TRANSACTION", "Max transaction limit size", false};  
+const command_line::arg_descriptor<std::string> arg_config_file = {"config-file", "Specify configuration file", ""};  
+const command_line::arg_descriptor<std::string> arg_rpc_bind_port = {"rpc-bind-port", "", std::to_string(RPC_DEFAULT_PORT)};
 const command_line::arg_descriptor<bool> arg_testnet = { "testnet", "Used to deploy test nets. The daemon must be launched with --testnet flag", false };
 const command_line::arg_descriptor< std::vector<std::string> > arg_command = { "command", "" };
 
@@ -589,7 +559,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm) {
   }
 
   std::string walletFileName;
-  sync_from_zero = command_line::get_arg(vm, arg_SYNC_FROM_ZERO);
+  sync_from_zero = 0;
     if (!m_generate_new.empty() || !m_import_new.empty()) {
     std::string ignoredString;
     if (!m_generate_new.empty()) {
@@ -641,7 +611,7 @@ bool simple_wallet::init(const boost::program_options::variables_map& vm) {
     return false;
   }
 
-  sync_from_zero = command_line::get_arg(vm, arg_SYNC_FROM_ZERO);
+  sync_from_zero = 0;
   if (!m_generate_new.empty()) {
     std::string walletAddressFile = prepareWalletAddressFilename(m_generate_new);
     boost::system::error_code ignore;
@@ -743,10 +713,10 @@ void simple_wallet::handle_command_line(const boost::program_options::variables_
   m_daemon_address = command_line::get_arg(vm, arg_daemon_address);
   m_daemon_host = command_line::get_arg(vm, arg_daemon_host);
   m_daemon_port = command_line::get_arg(vm, arg_daemon_port);
-m_default_fee = command_line::get_arg(vm, arg_DEFAULT_FEE);
-if (m_currency.minimumFee() > m_default_fee) {
-  m_default_fee = m_currency.minimumFee();
-}
+  m_default_fee = CryptoNote::parameters::DEFAULT_FEE;
+  if (m_currency.minimumFee() > m_default_fee) {
+    m_default_fee = m_currency.minimumFee();
+  }
 }
 //----------------------------------------------------------------------------------------------------
 bool simple_wallet::new_wallet(const std::string &wallet_file, const std::string& password) {
@@ -1238,39 +1208,9 @@ int main(int argc, char* argv[]) {
   command_line::add_arg(desc_params, arg_log_level);
   command_line::add_arg(desc_params, arg_testnet);
   Tools::wallet_rpc_server::init_options(desc_params);
-  command_line::add_arg(desc_params, arg_MANDATORY_TRANSACTION);
-  command_line::add_arg(desc_params, arg_MAX_TRANSACTION_SIZE_LIMIT);
   command_line::add_arg(desc_params, command_line::arg_data_dir, Tools::getDefaultDataDirectory());
   command_line::add_arg(desc_params, arg_config_file);
-  command_line::add_arg(desc_params, arg_GENESIS_COINBASE_TX_HEX);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
-  command_line::add_arg(desc_params, arg_MONEY_SUPPLY);
-  command_line::add_arg(desc_params, arg_EMISSION_SPEED_FACTOR);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_DISPLAY_DECIMAL_POINT);
-  command_line::add_arg(desc_params, arg_MINIMUM_FEE);
-  command_line::add_arg(desc_params, arg_DEFAULT_DUST_THRESHOLD);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_TARGET);
-  command_line::add_arg(desc_params, arg_CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
-  command_line::add_arg(desc_params, arg_MAX_BLOCK_SIZE_INITIAL);
-  command_line::add_arg(desc_params, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
-  command_line::add_arg(desc_params, arg_UPGRADE_HEIGHT_V2);
-  command_line::add_arg(desc_params, arg_UPGRADE_HEIGHT_V3);
-  command_line::add_arg(desc_params, arg_KEY_IMAGE_CHECKING_BLOCK_INDEX);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_WINDOW);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_CUT);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_WINDOW_V1);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_WINDOW_V2);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_LAG_V1);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_LAG_V2);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_CUT_V1);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_CUT_V2);
-  command_line::add_arg(desc_params, arg_DIFFICULTY_LAG);
   command_line::add_arg(desc_params, arg_rpc_bind_port);
-  command_line::add_arg(desc_params, arg_SYNC_FROM_ZERO);
-  command_line::add_arg(desc_params, arg_DEFAULT_FEE);
 
   po::positional_options_description positional_options;
   positional_options.add(arg_command.name, -1);
@@ -1288,7 +1228,84 @@ int main(int argc, char* argv[]) {
     po::store(command_line::parse_command_line(argc, argv, desc_general, true), vm);
 
     if (command_line::get_arg(vm, command_line::arg_help)) {
-      CryptoNote::Currency tmp_currency = CryptoNote::CurrencyBuilder(logManager).currency();
+
+      CryptoNote::CurrencyBuilder currencyBuilder(logManager);
+
+      currencyBuilder.cryptonoteName(CryptoNote::CRYPTONOTE_NAME);
+      currencyBuilder.mandatoryTransaction(CryptoNote::parameters::MANDATORY_TRANSACTION);
+      currencyBuilder.genesisCoinbaseTxHex(CryptoNote::parameters::GENESIS_COINBASE_TX_HEX);
+      currencyBuilder.publicAddressBase58Prefix(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
+      currencyBuilder.moneySupply(CryptoNote::parameters::MONEY_SUPPLY);
+      currencyBuilder.emissionSpeedFactor(CryptoNote::parameters::EMISSION_SPEED_FACTOR);
+      currencyBuilder.blockGrantedFullRewardZone(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
+      currencyBuilder.blockGrantedFullRewardZoneV1(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1);
+      currencyBuilder.blockGrantedFullRewardZoneV2(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2);
+      currencyBuilder.numberOfDecimalPlaces(CryptoNote::parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT);
+      currencyBuilder.mininumFee(CryptoNote::parameters::MINIMUM_FEE);
+      currencyBuilder.defaultDustThreshold(CryptoNote::parameters::DEFAULT_DUST_THRESHOLD);
+      currencyBuilder.difficultyTarget(CryptoNote::parameters::DIFFICULTY_TARGET);
+      currencyBuilder.minedMoneyUnlockWindow(CryptoNote::parameters::CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
+      currencyBuilder.maxBlockSizeInitial(CryptoNote::parameters::MAX_BLOCK_SIZE_INITIAL);
+
+      if (CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY != 0)
+      {
+        currencyBuilder.expectedNumberOfBlocksPerDay(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+        currencyBuilder.difficultyWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+        currencyBuilder.difficultyWindowV1(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+        currencyBuilder.difficultyWindowV2(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+        currencyBuilder.upgradeVotingWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+        currencyBuilder.upgradeWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+      } else {
+        currencyBuilder.expectedNumberOfBlocksPerDay(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+        currencyBuilder.difficultyWindow(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+        currencyBuilder.difficultyWindowV1(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+        currencyBuilder.difficultyWindowV2(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+      }
+
+      currencyBuilder.maxBlockSizeGrowthSpeedDenominator(365 * 24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+      currencyBuilder.lockedTxAllowedDeltaSeconds(CryptoNote::parameters::DIFFICULTY_TARGET * CryptoNote::parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS);
+
+      if (CryptoNote::parameters::UPGRADE_HEIGHT_V2 != 0)
+      {
+        currencyBuilder.upgradeHeightV2(CryptoNote::parameters::UPGRADE_HEIGHT_V2);
+      }
+
+      if (CryptoNote::parameters::UPGRADE_HEIGHT_V3 != 0)
+      {
+        currencyBuilder.upgradeHeightV3(CryptoNote::parameters::UPGRADE_HEIGHT_V3);
+      }
+
+      if (CryptoNote::parameters::KEY_IMAGE_CHECKING_BLOCK_INDEX != 0)
+      {
+        currencyBuilder.keyImageCheckingBlockIndex(CryptoNote::parameters::KEY_IMAGE_CHECKING_BLOCK_INDEX);
+      }
+
+      if (CryptoNote::parameters::DIFFICULTY_WINDOW != 0)
+      {
+        currencyBuilder.difficultyWindow(CryptoNote::parameters::DIFFICULTY_WINDOW);
+      }
+
+      currencyBuilder.difficultyLag(CryptoNote::parameters::DIFFICULTY_LAG);
+      currencyBuilder.difficultyCut(CryptoNote::parameters::DIFFICULTY_CUT);
+
+      if (CryptoNote::parameters::DIFFICULTY_WINDOW_V1 != 0)
+      {
+        currencyBuilder.difficultyWindowV1(CryptoNote::parameters::DIFFICULTY_WINDOW_V1);
+      }
+
+      if (CryptoNote::parameters::DIFFICULTY_WINDOW_V2 != 0)
+      {
+        currencyBuilder.difficultyWindowV2(CryptoNote::parameters::DIFFICULTY_WINDOW_V2);
+      }
+
+      currencyBuilder.difficultyLagV1(CryptoNote::parameters::DIFFICULTY_LAG_V1);
+      currencyBuilder.difficultyLagV2(CryptoNote::parameters::DIFFICULTY_LAG_V2);
+      currencyBuilder.difficultyCutV1(CryptoNote::parameters::DIFFICULTY_CUT_V1);
+      currencyBuilder.difficultyCutV2(CryptoNote::parameters::DIFFICULTY_CUT_V2);
+      // currencyBuilder.testnet(testnet_mode);
+
+      CryptoNote::Currency tmp_currency = currencyBuilder.currency();
+
       CryptoNote::simple_wallet tmp_wallet(dispatcher, tmp_currency, logManager);
 
       std::cout << CRYPTONOTE_NAME << " wallet v" << PROJECT_VERSION_LONG << std::endl;
@@ -1344,64 +1361,81 @@ int main(int argc, char* argv[]) {
   logger(INFO, BRIGHT_WHITE) << CRYPTONOTE_NAME << " wallet v" << PROJECT_VERSION_LONG;
 
   CryptoNote::CurrencyBuilder currencyBuilder(logManager);
-  currencyBuilder.genesisCoinbaseTxHex(command_line::get_arg(vm, arg_GENESIS_COINBASE_TX_HEX));
-  currencyBuilder.publicAddressBase58Prefix(command_line::get_arg(vm, arg_CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX));
-  currencyBuilder.moneySupply(command_line::get_arg(vm, arg_MONEY_SUPPLY));
-  currencyBuilder.emissionSpeedFactor(command_line::get_arg(vm, arg_EMISSION_SPEED_FACTOR));
-  currencyBuilder.blockGrantedFullRewardZone(command_line::get_arg(vm, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE));
-  currencyBuilder.blockGrantedFullRewardZoneV1(command_line::get_arg(vm, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1));
-  currencyBuilder.blockGrantedFullRewardZoneV2(command_line::get_arg(vm, arg_CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2));
-  currencyBuilder.numberOfDecimalPlaces(command_line::get_arg(vm, arg_CRYPTONOTE_DISPLAY_DECIMAL_POINT));
-  currencyBuilder.mininumFee(command_line::get_arg(vm, arg_MINIMUM_FEE));
-  currencyBuilder.defaultDustThreshold(command_line::get_arg(vm, arg_DEFAULT_DUST_THRESHOLD));
-  currencyBuilder.difficultyTarget(command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
-  currencyBuilder.minedMoneyUnlockWindow(command_line::get_arg(vm, arg_CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW));
-  currencyBuilder.maxBlockSizeInitial(command_line::get_arg(vm, arg_MAX_BLOCK_SIZE_INITIAL));
-  if (command_line::has_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY) && command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY) != 0)
+
+  currencyBuilder.cryptonoteName(CryptoNote::CRYPTONOTE_NAME);
+  currencyBuilder.mandatoryTransaction(CryptoNote::parameters::MANDATORY_TRANSACTION);
+  currencyBuilder.genesisCoinbaseTxHex(CryptoNote::parameters::GENESIS_COINBASE_TX_HEX);
+  currencyBuilder.publicAddressBase58Prefix(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
+  currencyBuilder.moneySupply(CryptoNote::parameters::MONEY_SUPPLY);
+  currencyBuilder.emissionSpeedFactor(CryptoNote::parameters::EMISSION_SPEED_FACTOR);
+  currencyBuilder.blockGrantedFullRewardZone(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
+  currencyBuilder.blockGrantedFullRewardZoneV1(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1);
+  currencyBuilder.blockGrantedFullRewardZoneV2(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2);
+  currencyBuilder.numberOfDecimalPlaces(CryptoNote::parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT);
+  currencyBuilder.mininumFee(CryptoNote::parameters::MINIMUM_FEE);
+  currencyBuilder.defaultDustThreshold(CryptoNote::parameters::DEFAULT_DUST_THRESHOLD);
+  currencyBuilder.difficultyTarget(CryptoNote::parameters::DIFFICULTY_TARGET);
+  currencyBuilder.minedMoneyUnlockWindow(CryptoNote::parameters::CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
+  currencyBuilder.maxBlockSizeInitial(CryptoNote::parameters::MAX_BLOCK_SIZE_INITIAL);
+
+  if (CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY != 0)
   {
-    currencyBuilder.expectedNumberOfBlocksPerDay(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
-    currencyBuilder.difficultyWindow(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
-    currencyBuilder.difficultyWindowV1(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
-    currencyBuilder.difficultyWindowV2(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
-    currencyBuilder.upgradeVotingWindow(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
-    currencyBuilder.upgradeWindow(command_line::get_arg(vm, arg_EXPECTED_NUMBER_OF_BLOCKS_PER_DAY));
+    currencyBuilder.expectedNumberOfBlocksPerDay(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+    currencyBuilder.difficultyWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+    currencyBuilder.difficultyWindowV1(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+    currencyBuilder.difficultyWindowV2(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+    currencyBuilder.upgradeVotingWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
+    currencyBuilder.upgradeWindow(CryptoNote::parameters::EXPECTED_NUMBER_OF_BLOCKS_PER_DAY);
   } else {
-    currencyBuilder.expectedNumberOfBlocksPerDay(24 * 60 * 60 / command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
-    currencyBuilder.difficultyWindow(24 * 60 * 60 / command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
-    currencyBuilder.difficultyWindowV1(24 * 60 * 60 / command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
-    currencyBuilder.difficultyWindowV2(24 * 60 * 60 / command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
+    currencyBuilder.expectedNumberOfBlocksPerDay(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+    currencyBuilder.difficultyWindow(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+    currencyBuilder.difficultyWindowV1(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+    currencyBuilder.difficultyWindowV2(24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
   }
-  currencyBuilder.maxBlockSizeGrowthSpeedDenominator(365 * 24 * 60 * 60 / command_line::get_arg(vm, arg_DIFFICULTY_TARGET));
-  currencyBuilder.lockedTxAllowedDeltaSeconds(command_line::get_arg(vm, arg_DIFFICULTY_TARGET) * CryptoNote::parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS);  
-  if (command_line::has_arg(vm, arg_UPGRADE_HEIGHT_V2) && command_line::get_arg(vm, arg_UPGRADE_HEIGHT_V2) != 0)
+
+  currencyBuilder.maxBlockSizeGrowthSpeedDenominator(365 * 24 * 60 * 60 / CryptoNote::parameters::DIFFICULTY_TARGET);
+  currencyBuilder.lockedTxAllowedDeltaSeconds(CryptoNote::parameters::DIFFICULTY_TARGET * CryptoNote::parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS);
+
+  if (CryptoNote::parameters::UPGRADE_HEIGHT_V2 != 0)
   {
-    currencyBuilder.upgradeHeightV2(command_line::get_arg(vm, arg_UPGRADE_HEIGHT_V2));
+    currencyBuilder.upgradeHeightV2(CryptoNote::parameters::UPGRADE_HEIGHT_V2);
   }
-  if (command_line::has_arg(vm, arg_UPGRADE_HEIGHT_V3) && command_line::get_arg(vm, arg_UPGRADE_HEIGHT_V3) != 0)
+
+  if (CryptoNote::parameters::UPGRADE_HEIGHT_V3 != 0)
   {
-    currencyBuilder.upgradeHeightV3(command_line::get_arg(vm, arg_UPGRADE_HEIGHT_V3));
+    currencyBuilder.upgradeHeightV3(CryptoNote::parameters::UPGRADE_HEIGHT_V3);
   }
-  if (command_line::has_arg(vm, arg_KEY_IMAGE_CHECKING_BLOCK_INDEX) && command_line::get_arg(vm, arg_KEY_IMAGE_CHECKING_BLOCK_INDEX) != 0)
+
+  if (CryptoNote::parameters::KEY_IMAGE_CHECKING_BLOCK_INDEX != 0)
   {
-    currencyBuilder.keyImageCheckingBlockIndex(command_line::get_arg(vm, arg_KEY_IMAGE_CHECKING_BLOCK_INDEX));
+    currencyBuilder.keyImageCheckingBlockIndex(CryptoNote::parameters::KEY_IMAGE_CHECKING_BLOCK_INDEX);
   }
-  if (command_line::has_arg(vm, arg_DIFFICULTY_WINDOW) && command_line::get_arg(vm, arg_DIFFICULTY_WINDOW) != 0)
+
+  if (CryptoNote::parameters::DIFFICULTY_WINDOW != 0)
   {
-    currencyBuilder.difficultyWindow(command_line::get_arg(vm, arg_DIFFICULTY_WINDOW));
+    currencyBuilder.difficultyWindow(CryptoNote::parameters::DIFFICULTY_WINDOW);
   }
-  currencyBuilder.difficultyLag(command_line::get_arg(vm, arg_DIFFICULTY_LAG));
-  currencyBuilder.difficultyCut(command_line::get_arg(vm, arg_DIFFICULTY_CUT));
-  currencyBuilder.difficultyWindowV1(command_line::get_arg(vm, arg_DIFFICULTY_WINDOW_V1));
-  currencyBuilder.difficultyWindowV2(command_line::get_arg(vm, arg_DIFFICULTY_WINDOW_V2));
-  currencyBuilder.difficultyLagV1(command_line::get_arg(vm, arg_DIFFICULTY_LAG_V1));
-  currencyBuilder.difficultyLagV2(command_line::get_arg(vm, arg_DIFFICULTY_LAG_V2));
-  currencyBuilder.difficultyCutV1(command_line::get_arg(vm, arg_DIFFICULTY_CUT_V1));
-  currencyBuilder.difficultyCutV2(command_line::get_arg(vm, arg_DIFFICULTY_CUT_V2));
-currencyBuilder.maxTransactionSizeLimit(command_line::get_arg(vm, arg_MAX_TRANSACTION_SIZE_LIMIT));
-currencyBuilder.fusionTxMaxSize(command_line::get_arg(vm, arg_MAX_TRANSACTION_SIZE_LIMIT) * 30 / 100);
-currencyBuilder.mandatoryTransaction(command_line::get_arg(vm, arg_MANDATORY_TRANSACTION));
-currencyBuilder.testnet(command_line::get_arg(vm, arg_testnet));
-CryptoNote::Currency currency = currencyBuilder.currency();
+
+  currencyBuilder.difficultyLag(CryptoNote::parameters::DIFFICULTY_LAG);
+  currencyBuilder.difficultyCut(CryptoNote::parameters::DIFFICULTY_CUT);
+
+  if (CryptoNote::parameters::DIFFICULTY_WINDOW_V1 != 0)
+  {
+    currencyBuilder.difficultyWindowV1(CryptoNote::parameters::DIFFICULTY_WINDOW_V1);
+  }
+
+  if (CryptoNote::parameters::DIFFICULTY_WINDOW_V2 != 0)
+  {
+    currencyBuilder.difficultyWindowV2(CryptoNote::parameters::DIFFICULTY_WINDOW_V2);
+  }
+
+  currencyBuilder.difficultyLagV1(CryptoNote::parameters::DIFFICULTY_LAG_V1);
+  currencyBuilder.difficultyLagV2(CryptoNote::parameters::DIFFICULTY_LAG_V2);
+  currencyBuilder.difficultyCutV1(CryptoNote::parameters::DIFFICULTY_CUT_V1);
+  currencyBuilder.difficultyCutV2(CryptoNote::parameters::DIFFICULTY_CUT_V2);
+  // currencyBuilder.testnet(testnet_mode);
+
+  CryptoNote::Currency currency = currencyBuilder.currency();
 
   if (command_line::has_arg(vm, Tools::wallet_rpc_server::arg_rpc_bind_port)) {
     //runs wallet with rpc interface

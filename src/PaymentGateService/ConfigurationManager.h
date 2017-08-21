@@ -32,7 +32,6 @@ public:
   Configuration gateConfiguration;
   CryptoNote::NetNodeConfig netNodeConfig;
   RpcNodeConfiguration remoteNodeConfig;
-  CoinBaseConfiguration coinBaseConfig;
   std::string dataDir;
 };
 

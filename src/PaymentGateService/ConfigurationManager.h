@@ -20,7 +20,6 @@
 #include "PaymentServiceConfiguration.h"
 #include "P2p/NetNodeConfig.h"
 #include "RpcNodeConfiguration.h"
-#include "CoinBaseConfiguration.h"
 
 namespace PaymentService {
 

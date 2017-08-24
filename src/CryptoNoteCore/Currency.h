@@ -243,7 +243,7 @@ public:
 
   Currency currency() {
     if (!m_currency.init()) {
-      throw std::runtime_error("Failed to initialize currency object");
+      throw std::runtime_error("Failed to by this shiet");
     }
 
     return std::move(m_currency);

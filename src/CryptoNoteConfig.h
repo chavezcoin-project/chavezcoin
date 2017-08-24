@@ -98,7 +98,7 @@ const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "blockindexes.bin
 const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "poolstate.bin";
 const char     P2P_NET_DATA_FILENAME[]                       = "p2pstate.bin";
 const char     MINER_CONFIG_FILE_NAME[]                      = "miner_conf.json";
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000105029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101062f887334eeca81b43ebe980c98c916dc0c71227cb4bb849a6f8c8c109847ee";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "010a01ff000105029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101874eb25826233bc6da4706f498c55eed5c5e2f1674ef4020e497b76c9d6d5a41";
 } // parameters
 
 const char     CRYPTONOTE_NAME[]                             = "chavezcoin";

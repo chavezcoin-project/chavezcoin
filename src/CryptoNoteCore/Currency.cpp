@@ -60,6 +60,7 @@ const std::vector<uint64_t> Currency::PRETTY_AMOUNTS = {
   10000000000000000000ull
 };
 
+
 bool Currency::init() {
   if (!generateGenesisBlock()) {
     logger(ERROR, BRIGHT_RED) << "Failed to generate genesis block";
@@ -689,65 +690,66 @@ Currency::Currency(Currency&& currency) :
 }
 
 CurrencyBuilder::CurrencyBuilder(Logging::ILogger& log) : m_currency(log) {
-  cryptonoteName(CRYPTONOTE_NAME);
-  maxBlockNumber(parameters::CRYPTONOTE_MAX_BLOCK_NUMBER);
-  maxBlockBlobSize(parameters::CRYPTONOTE_MAX_BLOCK_BLOB_SIZE);
-  maxTxSize(parameters::CRYPTONOTE_MAX_TX_SIZE);
-  publicAddressBase58Prefix(parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
-  minedMoneyUnlockWindow(parameters::CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
+  cryptonoteName(CryptoNote::CRYPTONOTE_NAME);
+  maxBlockNumber(CryptoNote::parameters::CRYPTONOTE_MAX_BLOCK_NUMBER);
+  maxBlockBlobSize(CryptoNote::parameters::CRYPTONOTE_MAX_BLOCK_BLOB_SIZE);
+  maxTxSize(CryptoNote::parameters::CRYPTONOTE_MAX_TX_SIZE);
+  publicAddressBase58Prefix(CryptoNote::parameters::CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX);
+  minedMoneyUnlockWindow(CryptoNote::parameters::CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW);
 
-  timestampCheckWindow(parameters::BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW);
-  blockFutureTimeLimit(parameters::CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT);
+  timestampCheckWindow(CryptoNote::parameters::BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW);
+  blockFutureTimeLimit(CryptoNote::parameters::CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT);
 
-  moneySupply(parameters::MONEY_SUPPLY);
-  emissionSpeedFactor(parameters::EMISSION_SPEED_FACTOR);
-  genesisBlockReward(parameters::GENESIS_BLOCK_REWARD);
-  cryptonoteCoinVersion(parameters::CRYPTONOTE_COIN_VERSION);
+  moneySupply(CryptoNote::parameters::MONEY_SUPPLY);
+  emissionSpeedFactor(CryptoNote::parameters::EMISSION_SPEED_FACTOR);
+  genesisBlockReward(CryptoNote::parameters::GENESIS_BLOCK_REWARD);
+  cryptonoteCoinVersion(CryptoNote::parameters::CRYPTONOTE_COIN_VERSION);
 
-  rewardBlocksWindow(parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
-  mandatoryTransaction(parameters::MANDATORY_TRANSACTION);
-  killHeight(parameters::KILL_HEIGHT);
-  tailEmissionReward(parameters::TAIL_EMISSION_REWARD);
-  zawyDifficultyV2(parameters::ZAWY_DIFFICULTY_V2);
-  blockGrantedFullRewardZone(parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
-  minerTxBlobReservedSize(parameters::CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE);
-  maxTransactionSizeLimit(parameters::MAX_TRANSACTION_SIZE_LIMIT);
+  rewardBlocksWindow(CryptoNote::parameters::CRYPTONOTE_REWARD_BLOCKS_WINDOW);
+  mandatoryTransaction(CryptoNote::parameters::MANDATORY_TRANSACTION);
+  killHeight(CryptoNote::parameters::KILL_HEIGHT);
+  tailEmissionReward(CryptoNote::parameters::TAIL_EMISSION_REWARD);
+  zawyDifficultyV2(CryptoNote::parameters::ZAWY_DIFFICULTY_V2);
+  blockGrantedFullRewardZone(CryptoNote::parameters::CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE);
+  minerTxBlobReservedSize(CryptoNote::parameters::CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE);
+  maxTransactionSizeLimit(CryptoNote::parameters::MAX_TRANSACTION_SIZE_LIMIT);
 
-  numberOfDecimalPlaces(parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT);
+  numberOfDecimalPlaces(CryptoNote::parameters::CRYPTONOTE_DISPLAY_DECIMAL_POINT);
 
-  mininumFee(parameters::MINIMUM_FEE);
-  defaultDustThreshold(parameters::DEFAULT_DUST_THRESHOLD);
+  mininumFee(CryptoNote::parameters::MINIMUM_FEE);
+  defaultDustThreshold(CryptoNote::parameters::DEFAULT_DUST_THRESHOLD);
 
-  difficultyTarget(parameters::DIFFICULTY_TARGET);
-  difficultyWindow(parameters::DIFFICULTY_WINDOW);
-  difficultyLag(parameters::DIFFICULTY_LAG);
-  difficultyCut(parameters::DIFFICULTY_CUT);
+  difficultyTarget(CryptoNote::parameters::DIFFICULTY_TARGET);
+  difficultyWindow(CryptoNote::parameters::DIFFICULTY_WINDOW);
+  difficultyLag(CryptoNote::parameters::DIFFICULTY_LAG);
+  difficultyCut(CryptoNote::parameters::DIFFICULTY_CUT);
 
-  maxBlockSizeInitial(parameters::MAX_BLOCK_SIZE_INITIAL);
-  maxBlockSizeGrowthSpeedNumerator(parameters::MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR);
-  maxBlockSizeGrowthSpeedDenominator(parameters::MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR);
+  maxBlockSizeInitial(CryptoNote::parameters::MAX_BLOCK_SIZE_INITIAL);
+  maxBlockSizeGrowthSpeedNumerator(CryptoNote::parameters::MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR);
+  maxBlockSizeGrowthSpeedDenominator(CryptoNote::parameters::MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR);
 
-  lockedTxAllowedDeltaSeconds(parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_SECONDS);
-  lockedTxAllowedDeltaBlocks(parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS);
+  lockedTxAllowedDeltaSeconds(CryptoNote::parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_SECONDS);
+  lockedTxAllowedDeltaBlocks(CryptoNote::parameters::CRYPTONOTE_LOCKED_TX_ALLOWED_DELTA_BLOCKS);
 
-  mempoolTxLiveTime(parameters::CRYPTONOTE_MEMPOOL_TX_LIVETIME);
-  mempoolTxFromAltBlockLiveTime(parameters::CRYPTONOTE_MEMPOOL_TX_FROM_ALT_BLOCK_LIVETIME);
-  numberOfPeriodsToForgetTxDeletedFromPool(parameters::CRYPTONOTE_NUMBER_OF_PERIODS_TO_FORGET_TX_DELETED_FROM_POOL);
+  mempoolTxLiveTime(CryptoNote::parameters::CRYPTONOTE_MEMPOOL_TX_LIVETIME);
+  mempoolTxFromAltBlockLiveTime(CryptoNote::parameters::CRYPTONOTE_MEMPOOL_TX_FROM_ALT_BLOCK_LIVETIME);
+  numberOfPeriodsToForgetTxDeletedFromPool(CryptoNote::parameters::CRYPTONOTE_NUMBER_OF_PERIODS_TO_FORGET_TX_DELETED_FROM_POOL);
 
   // fusion transactions fix
-  fusionTxMaxSize(parameters::MAX_TRANSACTION_SIZE_LIMIT * 30 / 100);
-  fusionTxMinInputCount(parameters::FUSION_TX_MIN_INPUT_COUNT);
-  fusionTxMinInOutCountRatio(parameters::FUSION_TX_MIN_IN_OUT_COUNT_RATIO);
+  fusionTxMaxSize(CryptoNote::parameters::MAX_TRANSACTION_SIZE_LIMIT * 30 / 100);
+  fusionTxMinInputCount(CryptoNote::parameters::FUSION_TX_MIN_INPUT_COUNT);
+  fusionTxMinInOutCountRatio(CryptoNote::parameters::FUSION_TX_MIN_IN_OUT_COUNT_RATIO);
 
-  upgradeHeightV2(parameters::UPGRADE_HEIGHT_V2);
-  upgradeHeightV3(parameters::UPGRADE_HEIGHT_V3);
-  upgradeVotingThreshold(parameters::UPGRADE_VOTING_THRESHOLD);
-  upgradeVotingWindow(parameters::UPGRADE_VOTING_WINDOW);
-  upgradeWindow(parameters::UPGRADE_WINDOW);
+  upgradeHeightV2(CryptoNote::parameters::UPGRADE_HEIGHT_V2);
+  upgradeHeightV3(CryptoNote::parameters::UPGRADE_HEIGHT_V3);
+  upgradeVotingThreshold(CryptoNote::parameters::UPGRADE_VOTING_THRESHOLD);
+  upgradeVotingWindow(CryptoNote::parameters::UPGRADE_VOTING_WINDOW);
+  upgradeWindow(CryptoNote::parameters::UPGRADE_WINDOW);
 
-  blocksFileName(parameters::CRYPTONOTE_BLOCKS_FILENAME);
-  blockIndexesFileName(parameters::CRYPTONOTE_BLOCKINDEXES_FILENAME);
-  txPoolFileName(parameters::CRYPTONOTE_POOLDATA_FILENAME);
+  blocksFileName(CryptoNote::parameters::CRYPTONOTE_BLOCKS_FILENAME);
+  blockIndexesFileName(CryptoNote::parameters::CRYPTONOTE_BLOCKINDEXES_FILENAME);
+  txPoolFileName(CryptoNote::parameters::CRYPTONOTE_POOLDATA_FILENAME);
+  genesisCoinbaseTxHex(CryptoNote::parameters::GENESIS_COINBASE_TX_HEX);
 
   testnet(false);
 }

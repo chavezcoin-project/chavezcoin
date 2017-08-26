@@ -86,6 +86,7 @@ NetNodeConfig::NetNodeConfig() {
   p2pStatTrustedPubKey = "";
   configFolder = Tools::getDefaultDataDirectory();
   testnet = false;
+  networkId = BYTECOIN_NETWORK;
 }
 
 bool NetNodeConfig::init(const boost::program_options::variables_map& vm)
@@ -107,9 +108,9 @@ bool NetNodeConfig::init(const boost::program_options::variables_map& vm)
 //     p2pStatTrustedPubKey = command_line::get_arg(vm, arg_P2P_STAT_TRUSTED_PUB_KEY);
 // //  }
 
-// //  if (vm.count(arg_network_id.name) != 0 && (!vm[arg_network_id.name].defaulted())) {
-//     networkId = boost::lexical_cast<boost::uuids::uuid>(command_line::get_arg(vm, arg_network_id));
-// //  }
+//  if (vm.count(arg_network_id.name) != 0 && (!vm[arg_network_id.name].defaulted())) {
+    networkId = boost::lexical_cast<boost::uuids::uuid>(BYTECOIN_NETWORK);
+//  }
 
   if (vm.count(arg_p2p_allow_local_ip.name) != 0 && (!vm[arg_p2p_allow_local_ip.name].defaulted() || !allowLocalIp)) {
     allowLocalIp = command_line::get_arg(vm, arg_p2p_allow_local_ip);

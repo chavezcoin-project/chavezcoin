@@ -900,7 +900,7 @@ void DatabaseBlockchainCache::pushTransaction(const CachedTransaction& cachedTra
 uint32_t DatabaseBlockchainCache::updateKeyOutputCount(Amount amount, int32_t diff) const {
   auto it = keyOutputCountsForAmounts.find(amount);
   if (it == keyOutputCountsForAmounts.end()) {
-    logger(Logging::TRACE) << "updateKeyOutputCount: failed to found key for amount, request database";
+    logger(Logging::TRACE) << "updateKeyOutputCount: failed to found key for amount, request database: " << amount;
 
     BlockchainReadBatch batch;
     auto result = readDatabase(batch.requestKeyOutputGlobalIndexesCountForAmount(amount));
@@ -1445,6 +1445,8 @@ std::vector<CachedBlockInfo> DatabaseBlockchainCache::getLastDbUnits(uint32_t bl
 std::vector<uint64_t>
 DatabaseBlockchainCache::getLastUnits(size_t count, uint32_t blockIndex, UseGenesis useGenesis,
                                       std::function<uint64_t(const CachedBlockInfo&)> pred) const {
+  logger(Logging::DEBUGGING) << "get last units count: " << count << " numeric_limits: " << std::numeric_limits<uint32_t>::max();
+  
   assert(count <= std::numeric_limits<uint32_t>::max());
 
   auto cachedUnits = getLastCachedUnits(blockIndex, count, useGenesis);
